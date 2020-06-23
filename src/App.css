@@ -84,7 +84,7 @@ main {
 }
 
 section.game {
-  width: 60%;
+  width: 50%;
   height: 80vh;
   margin: 150px auto;
   display: flex;
@@ -142,7 +142,6 @@ main section.game div.container div.cont img {
 }
 
 #disactive {
-  /* opacity: .5; */
   width: 100%
 }
 

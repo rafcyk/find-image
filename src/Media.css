@@ -1,3 +1,9 @@
+@media only screen and (max-width:1100px) {
+    section.game {
+        width: 80%;
+    }
+}
+
 @media only screen and (max-width:900px) {
     section.game {
         width: 100%;

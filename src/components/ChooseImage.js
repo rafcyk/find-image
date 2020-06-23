@@ -39,7 +39,7 @@ const ChooseImage = (props) => {
                 setTimeout(() => {
                     previousImage.id = 'disactive';
                     thisImage.id = 'disactive';
-                }, 300)
+                }, 200)
             }
 
             numberClick = 0;

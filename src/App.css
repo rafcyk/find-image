@@ -84,7 +84,7 @@ main {
 }
 
 section.game {
-  width: 50%;
+  width: 40%;
   height: 80vh;
   margin: 150px auto;
   display: flex;
@@ -107,7 +107,7 @@ section.game div.container {
 
 main section.game div.container div.cont {
   position: relative;
-  width: 150px;
+  width: 21%;
   height: 100px;
   margin: 10px 10px;
   border: 2px solid black;
@@ -124,7 +124,7 @@ main section.game div.container div.cont div.square {
   left: 0;
   z-index: 2;
   background-color: black;
-  transition: .2s;
+  transition: .1s;
 }
 
 main section.game div.container div.cont img {

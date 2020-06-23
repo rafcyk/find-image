@@ -7,6 +7,8 @@ const EnterName = (props) => {
         }else{
             document.querySelector('div.nameContainer').id = 'goUp';
             document.querySelector('p.name').classList.add('activeName');
+            document.querySelector('div.timerContainer p.timer').classList.add('activeTime');
+            props.playTime();
         }
     }
 

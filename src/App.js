@@ -3,7 +3,7 @@ import React from 'react';
 import ChooseImage from './components/ChooseImage';
 import EnterName from './components/EnterName';
 import AgainButton from './components/AgainButton';
-import Timer from './components/Timer';
+// import Timer from './components/Timer';
 
 import First from './images/1.jpg';
 import Second from './images/2.jpg';
@@ -57,7 +57,9 @@ class App extends React.Component {
     randomFirst: [],
     randomSecond: [],
     playerName:'',
-    time: ''
+    time:0,
+    timerOn:true,
+    timerId: Number
   }
 
   componentDidMount() {
@@ -86,8 +88,27 @@ class App extends React.Component {
     })
   }
 
+
+
+  playTime = () => {
+    let time = 0;
+      this.state.timerId = setInterval(() => {
+        time++;
+        this.setState({
+          time
+        })
+      }, 1000);
+  }
+
+  stopTimer = () => {
+    clearInterval(this.state.timerId);
+  }
+
+
   playAgain = () => {
 
+    this.playTime();
+    document.querySelector('div.timerContainer p.timer').classList.add('activeTime');
     document.querySelector('div.againContainer').classList.remove('activeAgain');
     document.querySelectorAll('div.square').forEach(div => {
       div.id = 'disactive';
@@ -116,7 +137,7 @@ class App extends React.Component {
     this.setState({
       randomFirst: randomArrayFirst,
       randomSecond: randomArraySecond,
-      images: randomArrayFirst
+      images: randomArrayFirst,
     })
   }
 
@@ -127,6 +148,8 @@ handleChange = (e) => {
   }
 
 
+
+
   render() {
     return (
       <main>
@@ -135,18 +158,23 @@ handleChange = (e) => {
         <ChooseImage
           randomFirst={this.state.randomFirst}
           randomSecond={this.state.randomSecond}
+          stopTimer = {this.stopTimer}
         />
 
         <EnterName 
         playerName = {this.state.playerName}
         handleChange = {this.handleChange}
+        playTime = {this.playTime}
         />
 
         <AgainButton
         playAgain = {this.playAgain}
+        time = {this.state.time}
         />
 
-        <Timer/>
+        <div className = 'timerContainer'>
+          <p className="timer">Time: {this.state.time < 10 ? `0${this.state.time}`: `${this.state.time}`} s.</p>
+        </div>
       </main>
     )
   }

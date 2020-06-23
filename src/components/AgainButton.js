@@ -4,7 +4,7 @@ const AgainButton = (props) => {
     return (
         <div className = 'againContainer'>
             <button className="again" onClick = {props.playAgain}>Play again</button>
-            <p>Final time: </p>
+            <p>Final time: {props.time}</p>
         </div>
     );
 };

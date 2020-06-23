@@ -1,10 +1,11 @@
 import React from 'react';
 
-const Timer = () => {
+const Timer = (props) => {
+
+    
+
     return (
-        <div className = 'timerContainer'>
-            <p className="timer">Time:</p>
-        </div>
+
     );
 };
 

@@ -32,14 +32,15 @@ const ChooseImage = (props) => {
                         setTimeout(() => {
                             document.querySelector('div.againContainer').classList.add('activeAgain');
                         }, 200)
+                        document.querySelector('div.timerContainer p.timer').classList.remove('activeTime');
+                        props.stopTimer();
                     }
 
                 } else {
                     setTimeout(() => {
                     previousImage.id = 'disactive';
                     thisImage.id = 'disactive';
-                    console.log('porażka');
-                }, 500)
+                }, 300)
                 }
 
             numberClick = 0;
@@ -47,6 +48,8 @@ const ChooseImage = (props) => {
             secondImage = '';
         }
     }
+
+
 
 
     const imagesListFirst = props.randomFirst.map((image) => {
@@ -63,7 +66,7 @@ const ChooseImage = (props) => {
 
     return (
         <section className='game'>
-            <div className = 'container'>{imagesListFirst} {imagesListSecond}</div>
+            <div className = 'container'>{imagesListFirst} {imagesListSecond} </div>
 
         </section>
     );

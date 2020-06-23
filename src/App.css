@@ -38,7 +38,7 @@ body{
 section.game{
   width: 60%;
   height: 80vh;
-  margin: 100px auto;
+  margin: 150px auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -215,3 +215,20 @@ div.againContainer.activeAgain{
 }
 
 /* --------------------TIMER---------------- */
+
+div.timerContainer{
+  position: absolute;
+  top:5%;
+  right: 5%;
+}
+
+div.timerContainer p.timer{
+  font-size: 3rem;
+  color:white;
+  opacity: 0;
+  transition: .2s;
+}
+
+div.timerContainer p.timer.activeTime{
+  opacity: 1;
+}

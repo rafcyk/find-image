@@ -14,8 +14,7 @@ import Seventh from './images/7.jpg';
 import Eighth from './images/8.jpg';
 
 import './App.css';
-
-
+import './Media.css';
 
 class App extends React.Component {
   state = {
@@ -55,10 +54,10 @@ class App extends React.Component {
     ],
     randomFirst: [],
     randomSecond: [],
-    playerName:'',
-    time:0,
-    minutes:0,
-    timerOn:true,
+    playerName: '',
+    time: 0,
+    minutes: 0,
+    timerOn: true,
     timerId: Number
   }
 
@@ -88,22 +87,19 @@ class App extends React.Component {
     })
   }
 
-
-
   playTime = () => {
     let time = 0;
-      this.state.timerId = setInterval(() => {
-        time++;
-        this.setState({
-          time
-        })
-      }, 1000);
+    this.state.timerId = setInterval(() => {
+      time++;
+      this.setState({
+        time
+      })
+    }, 1000);
   }
 
   stopTimer = () => {
     clearInterval(this.state.timerId);
   }
-
 
   playAgain = () => {
 
@@ -117,8 +113,6 @@ class App extends React.Component {
     let exapmpleArray = [];
     let randomArrayFirst = [];
     let randomArraySecond = [];
-
-    
 
     for (let i = 0; i < this.state.images.length;) {
       let randomNumber = Math.floor(Math.random() * this.state.images.length);
@@ -138,16 +132,15 @@ class App extends React.Component {
       randomFirst: randomArrayFirst,
       randomSecond: randomArraySecond,
       images: randomArrayFirst,
-      time:0
+      time: 0
     })
   }
 
-handleChange = (e) => {
-        this.setState({
-          playerName: e.target.value
-        })
+  handleChange = (e) => {
+    this.setState({
+      playerName: e.target.value
+    })
   }
-
 
   render() {
     return (
@@ -157,22 +150,22 @@ handleChange = (e) => {
         <ChooseImage
           randomFirst={this.state.randomFirst}
           randomSecond={this.state.randomSecond}
-          stopTimer = {this.stopTimer}
+          stopTimer={this.stopTimer}
         />
 
-        <EnterName 
-        playerName = {this.state.playerName}
-        handleChange = {this.handleChange}
-        playTime = {this.playTime}
+        <EnterName
+          playerName={this.state.playerName}
+          handleChange={this.handleChange}
+          playTime={this.playTime}
         />
 
         <AgainButton
-        playAgain = {this.playAgain}
-        time = {this.state.time}
+          playAgain={this.playAgain}
+          time={this.state.time}
         />
 
-        <div className = 'timerContainer'>
-          <p className="timer">Time: {this.state.time < 10 ? `0${this.state.time}`:this.state.time} .s</p>
+        <div className='timerContainer'>
+          <p className="timer">Time: {this.state.time < 10 ? `0${this.state.time}` : this.state.time} .s</p>
         </div>
       </main>
     )

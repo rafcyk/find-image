@@ -1,0 +1,46 @@
+@media only screen and (max-width:900px) {
+    section.game {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width:600px) {
+    main section.game div.container div.cont {
+        width: 100px;
+        height: 70px;
+        margin: 5px 5px;
+        border: 2px solid black;
+        border-radius: 5px;
+        padding: 5px;
+    }
+
+    div.nameContainer div.wrapName {
+        width: 300px;
+        height: 200px;
+        padding: 10px 10px;
+    }
+
+    div.nameContainer div.wrapName p {
+        font-size: 2rem;
+    }
+
+    div.nameContainer div.wrapName input {
+        font-size: 2rem;
+        padding: 0px;
+    }
+
+    div.nameContainer div.wrapName button {
+        font-size: 2rem;
+    }
+}
+
+@media only screen and (max-width:350px) {
+    main section.game div.container div.cont {
+        width: 80px;
+        height: 50px;
+        margin: 5px 5px;
+        border: 2px solid black;
+        border-radius: 5px;
+        padding: 5px;
+    }
+}

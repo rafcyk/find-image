@@ -3,7 +3,6 @@ import React from 'react';
 import ChooseImage from './components/ChooseImage';
 import EnterName from './components/EnterName';
 import AgainButton from './components/AgainButton';
-// import Timer from './components/Timer';
 
 import First from './images/1.jpg';
 import Second from './images/2.jpg';
@@ -58,6 +57,7 @@ class App extends React.Component {
     randomSecond: [],
     playerName:'',
     time:0,
+    minutes:0,
     timerOn:true,
     timerId: Number
   }
@@ -138,6 +138,7 @@ class App extends React.Component {
       randomFirst: randomArrayFirst,
       randomSecond: randomArraySecond,
       images: randomArrayFirst,
+      time:0
     })
   }
 
@@ -146,8 +147,6 @@ handleChange = (e) => {
           playerName: e.target.value
         })
   }
-
-
 
 
   render() {
@@ -173,7 +172,7 @@ handleChange = (e) => {
         />
 
         <div className = 'timerContainer'>
-          <p className="timer">Time: {this.state.time < 10 ? `0${this.state.time}`: `${this.state.time}`} s.</p>
+          <p className="timer">Time: {this.state.time < 10 ? `0${this.state.time}`:this.state.time} .s</p>
         </div>
       </main>
     )
